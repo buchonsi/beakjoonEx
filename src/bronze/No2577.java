@@ -25,7 +25,7 @@ public class No2577 {
 		}
 	}
 }
-//숫자 하나씩 뽑아내기 (뒤에서부터).
+//숫자 하나씩 뽑아내기 (뒤에서부터)
 //int sum = a * b * c;
 //int[] cnt = new int[10];
 

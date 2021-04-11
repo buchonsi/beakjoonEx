@@ -18,7 +18,7 @@ public class No10818 {
 		int count = Integer.parseInt(br.readLine());
 		int maxNum;
 		int minNum;
-		StringTokenizer st = new StringTokenizer(br.readLine()," ");
+		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
 		for(int i=0; i<count; i++) {
 			arr.add(Integer.parseInt(st.nextToken()));
