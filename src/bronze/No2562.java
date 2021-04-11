@@ -25,5 +25,4 @@ public class No2562 {
 		sb.append(maxNum).append("\n").append(count);
 		System.out.println(sb);
 	}
-
 }
