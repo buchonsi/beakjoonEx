@@ -11,11 +11,11 @@ public class No8958 {
 //		StringBuffer sb = new StringBuffer();
 //		
 //		int idx = Integer.parseInt(br.readLine());
-//		String[] arr = new String[idx];
+//		String[] arr = new String[idx];				//총개수
 //		
 //		for(int i=0; i<idx; i++) {
 //			arr[i] = br.readLine();
-//			char[] arr2 = new char[arr[i].length()];
+//			char[] arr2 = new char[arr[i].length()];	//ox 판단용
 //			int sum=0;
 //			int count=0;
 //			for(int j=0; j<arr2.length; j++) {
@@ -38,7 +38,7 @@ public class No8958 {
 			int sum=0;
 			int count=0;
 			for(int j=0; j<arr2.length; j++) {
-				System.out.println(arr2[j]);
+				//System.out.println(arr2[j]);
 				if(arr2[j]=='O') count++;
 				else count=0;
 				sum+=count;
