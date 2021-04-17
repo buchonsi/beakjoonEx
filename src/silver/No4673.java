@@ -1,4 +1,4 @@
-package bronze;
+package silver;
 
 public class No4673 {
 	
