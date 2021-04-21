@@ -19,7 +19,6 @@ public class No1316 {
 		System.out.println(group);
 		
 	}
-	
 	private static boolean group() throws IOException {
 		boolean[] alp = new boolean[26];
 		String s = br.readLine();
