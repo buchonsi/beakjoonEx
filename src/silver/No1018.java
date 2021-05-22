@@ -47,7 +47,7 @@ public class No1018 {
 				if(arr[i][j] != firstWord) {
 					count++;
 				}
-				firstWord = !firstWord;
+				firstWord = !firstWord;			
 			}
 			firstWord = !firstWord;
 		}
