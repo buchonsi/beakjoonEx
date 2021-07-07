@@ -5,20 +5,22 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class No15652 {
+public class No15650 {
 	
 	static int n,m;
 	static int[] count;
+	static int[] num;
 	static StringBuffer sb = new StringBuffer();
 	
 	public static void main(String[] args) {
 		input();
 		count = new int[m];
+		num = new int[n];
 		dfs_func(0,0);
 		System.out.println(sb);
 	}
 
-	private static void dfs_func(int startNum,int k) {
+	private static void dfs_func(int startNum, int k) {
 		if(k==m) {
 			for(int n:count) {
 				sb.append(n).append(" ");
@@ -28,8 +30,12 @@ public class No15652 {
 		}
 		
 		for(int i=startNum; i<n; i++) {
-			count[k] = i+1;
-			dfs_func(i,k+1);
+			if(num[i]==0) {
+				count[k] = i+1;
+				num[i] = 1;
+				dfs_func(i, k+1);
+				num[i] = 0;
+			}
 		}
 	}
 
