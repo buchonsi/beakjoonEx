@@ -10,42 +10,84 @@ public class No10816 {
 	
 	static int[] n;
 	static int[] m;
-	
+	static int count;
 	public static void main(String[] args) throws NumberFormatException, IOException {
+		StringBuilder sb = new StringBuilder();
+		
 		input();
 		Arrays.sort(n);
 		for(int i=0; i<m.length; i++) {
-			midChk(n , 0, n.length-1, m[i]);
+			int start = lower_bound(n , 0, n.length, m[i]);
+			int last = upper_bound(n , 0, n.length, m[i]);
+			sb.append(last-start).append(" ");
+			count=0;
 		}
-		
+		System.out.println(sb);
 	}
-
-	private static int midChk(int[] n, int left, int right, int m) {
-		int result = 0;
-		int mid;
-		
-		while(left>right) {
+	
+private static int upper_bound(int[] n, int left, int right, int m) {
+		int mid = 0;
+		while(left<right) {
 			mid = (left+right)/2;
-			if(n[mid] == m) {
-				result = checkCount(mid);
-				break;
-			}else if(n[mid] < m){
+			if(n[mid]<=m) {
 				left = mid+1;
 			}else {
-				right = mid-1;
+				right = mid;
 			}
+			
 		}
-		return result;
+		return left;
 	}
 
-	private static int checkCount(int mid) {
-		int count = 0;
-		
-//		if(n[mid])
-		
-		return count;
+
+
+
+private static int lower_bound(int[] n, int left, int right, int m) {
+		int mid = 0;
+		while(left<right) {
+			mid = (left+right)/2;
+			if(n[mid]>=m) {
+				right = mid;
+			}else {
+				left = mid+1;
+			}
+			
+		}
+		return left;
 		
 	}
+
+//시간초과
+//	private static void midChk(int[] n, int left, int right, int m) {
+//		int mid;
+//		
+//		while(left<=right) {
+//			mid = (left+right)/2;
+//			if(n[mid] == m) {
+//				count++;
+//				checkCount(mid);
+//				break;
+//			}else if(n[mid] < m){
+//				left = mid+1;
+//			}else {
+//				right = mid-1;
+//			}
+//		}
+//	}
+//
+//	private static void checkCount(int mid) {
+//		int startR = mid;
+//		int startL = mid;
+//		while(startL>0) {
+//			if(n[--startL]==n[mid]) count++;
+//			else break;
+//		}
+//		while(startR<n.length-1) {
+//			if(n[++startR]==n[mid]) count++;
+//			else break;
+//		}
+//				
+//	}
 
 	private static void input() throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -65,7 +107,6 @@ public class No10816 {
 		for (int i = 0; i < m.length; i++) {
 			m[i] = Integer.parseInt(st.nextToken());
 		}
-		
 		br.close();
 	}
 	
