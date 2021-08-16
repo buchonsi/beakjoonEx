@@ -52,7 +52,7 @@ public class MarathonPlayer {
          }
          for(String comp:completion){
              hash.put(comp,hash.getOrDefault(comp,0)-1);
-         }
+         } 
          for(String ans:hash.keySet()){
              if(hash.get(ans)!=0)
              answer = ans;
