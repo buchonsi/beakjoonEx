@@ -42,7 +42,7 @@ public class MarathonPlayer {
     	if(!temp.equals("")) {
     		answer = temp;
     	}else {
-    		answer = participant[participant.length-1];
+    		answer = participant[participant.length-1]; 
     	}
     	//-------------------------------------------------------
     	//해쉬맵을 이용하여 풀이
